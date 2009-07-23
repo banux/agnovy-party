@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  require 'relaxdb'
+  RelaxDB.configure(:host => 'banux.helheim.net', :port => 5984, :design_doc => "app")
+  RelaxDB.use_db('agnovi_party')
+  RelaxDB.enable_view_creation
+  
 end

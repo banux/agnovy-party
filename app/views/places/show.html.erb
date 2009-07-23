@@ -1,0 +1,38 @@
+<p>
+  <b>Place type:</b>
+  <%=h @place.place_type %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @place.address %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @place.description %>
+</p>
+
+<p>
+  <b>Visit:</b>
+  <%=h @place.visit %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @place.name %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%=h @place.tags %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @place.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

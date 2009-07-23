@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  place_type: MyString
+  address: MyString
+  description: MyText
+  visit: false
+  name: MyString
+  tags: MyString
+  location: MyString
+
+two:
+  place_type: MyString
+  address: MyString
+  description: MyText
+  visit: false
+  name: MyString
+  tags: MyString
+  location: MyString
