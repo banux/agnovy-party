@@ -7,6 +7,14 @@ class PlacesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @places }
+      format.kml {
+        overlay = Kamel::Overlay.new
+        overlay.name = 'Agnovi Party'
+        @places.each do |place|
+          place.to_kml(overlay)
+        end
+        render :text => overlay.to_kml
+      }
     end
   end
 
@@ -41,7 +49,7 @@ class PlacesController < ApplicationController
   # POST /places.xml
   def create
     @place = Place.new(params[:place])
-
+    @place.location = @place.get_geoloc
     respond_to do |format|
       if @place.save
         flash[:notice] = 'Place was successfully created.'
@@ -58,6 +66,7 @@ class PlacesController < ApplicationController
   # PUT /places/1.xml
   def update
     @place = RelaxDB.load(params[:id])
+    @place.location = @place.get_geoloc
 
     respond_to do |format|
       if @place.update_attributes(params[:place])

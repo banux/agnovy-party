@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   require 'relaxdb'
-  RelaxDB.configure(:host => 'banux.helheim.net', :port => 5984, :design_doc => "app")
+  RelaxDB.configure(:host => 'couchdb.helheim.net', :port => 5984, :design_doc => "app")
   RelaxDB.use_db('agnovi_party')
   RelaxDB.enable_view_creation
   
